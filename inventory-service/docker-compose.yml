@@ -1,0 +1,16 @@
+version: '4'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-inventory
+    ports:
+      - "5433:5433"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: inventory_service
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
